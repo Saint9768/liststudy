@@ -7,7 +7,6 @@ import lombok.Data;
 /**
  * @author Saint
  */
-@Data
 public class UserController {
     @AutoWired2
     private UserService userService;
@@ -18,4 +17,12 @@ public class UserController {
     public UserService getUserService() {
         return this.userService;
     }
+
+    /**
+     * 仅作为反射测试，自定义注解中没有使用
+     * @param userService
+     */
+    /*public void setUserService(UserService userService) {
+        this.userService = userService;
+    }*/
 }
