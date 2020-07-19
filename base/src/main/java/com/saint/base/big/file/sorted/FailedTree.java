@@ -1,10 +1,5 @@
 package com.saint.base.big.file.sorted;
 
-/**
- * @author Saint
- * @createTime 2020-07-18 15:11
- */
-
 import java.util.ArrayList;
 
 /**
@@ -170,6 +165,7 @@ public class FailedTree<T extends Comparable> {
             //新增叶子节点
             String newLeaf = sources[s].poll();
             if (newLeaf == null) {
+                //如果多个归并段的长度不一样，这里的逻辑是有问题的。逻辑纠错请看MergeSortedTxt类中。
                 // sources[s] 对应的队列（归并段）已经为空，删除队列并调整败者树
                 loserTree.del(s);
             } else {

@@ -84,8 +84,6 @@ public class TxtSplit {
         return list;
     }
 
-
-
     /*public static void main(String[] args) throws IOException {
 
         long startTime = System.currentTimeMillis();
