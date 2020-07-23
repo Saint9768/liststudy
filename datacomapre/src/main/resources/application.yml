@@ -1,4 +1,4 @@
 server:
   port: 8089
-
-
+logging:
+  config: classpath:logback.xml
