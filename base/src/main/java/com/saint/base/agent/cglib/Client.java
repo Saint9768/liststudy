@@ -20,7 +20,7 @@ public class Client {
         enhancer.setCallback(new MyMethodInterceptor());
         // 创建代理对象
         HelloService proxy = (HelloService) enhancer.create();
-        // 通过代理对象调用目标方法
+        // 通过代理对象调用目标方法,无法代理final方法
         proxy.sayHello();
     }
 }
