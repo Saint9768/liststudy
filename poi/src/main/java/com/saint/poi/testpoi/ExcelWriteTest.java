@@ -1,6 +1,5 @@
-package com.saint.poi.test;
+package com.saint.poi.testpoi;
 
-import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.hssf.usermodel.HSSFFormulaEvaluator;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -16,6 +15,7 @@ import java.io.IOException;
 import java.util.Date;
 
 /**
+ * 此处报错是因为使用的EasyExcel依赖，如果直接使用poi最新依赖则没有问题。
  * @author Saint
  * @version 1.0
  * @createTime 2020-08-10 22:00
@@ -128,7 +128,7 @@ public class ExcelWriteTest {
         fileInputStream.close();
     }
 
-    @Test
+   /* @Test
     public void testReadExcel07(FileInputStream fileInputStream) throws IOException {
         //1.创建一个工作簿
         Workbook workbook = new XSSFWorkbook(fileInputStream);
@@ -204,9 +204,9 @@ public class ExcelWriteTest {
         }
 
         fileInputStream.close();
-    }
+    }*/
 
-    @Test
+   /* @Test
     public void testFormula(FileInputStream fileInputStream) throws IOException {
         //1.创建一个工作簿
         Workbook workbook = new HSSFWorkbook(fileInputStream);
@@ -235,6 +235,6 @@ public class ExcelWriteTest {
                 break;
         }
         fileInputStream.close();
-    }
+    }*/
 
 }
