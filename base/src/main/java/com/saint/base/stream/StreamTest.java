@@ -1,9 +1,7 @@
 package com.saint.base.stream;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -30,6 +28,16 @@ public class StreamTest {
                 .filter(s -> s.length() == 3)
                 .forEach(System.out::println);
 
+        long count = list.stream().filter(s -> s.startsWith("周"))
+                .filter(s -> s.length() == 3).count();
+        System.out.println(count);
+
+        //并行流
+        list.parallelStream().forEach(System.out::println);
+
+        // 1.1 map()，将mapper应用于当前流中所有元素所产生的结果。
+        list.stream().map(s -> s.substring(0, 1)).forEach(System.out::println);
+
         //2. 获取流
         //2.1. 根据Collection获取流
         Stream<String> stream1 = list.stream();
@@ -39,24 +47,57 @@ public class StreamTest {
         Stream<String> valueStream = map.values().stream();
         Stream<Map.Entry<String, String>> entryStream = map.entrySet().stream();
         //2.3. 根据数组获取流
-        String[] array = {"hello", "saint", "and", "world"};
+        String[] array = {"hello", "sainta", "and", "worldaa", "hello"};
         Stream<String> stringStream = Stream.of(array);
         stringStream.forEach(name -> System.out.println(name));
 
+        //2.3.2 取数组的一部分
+        Stream<String> stream = Arrays.stream(array, 1, 2);
+        stream.forEach(System.out::println);
+        System.out.println("#########");
+
+        // 2.4 剔除流中重复的元素
+        Stream<String> dupli = Stream.of(array).distinct();
+        dupli.forEach(name -> System.out.println(name));
+        System.out.println("#########");
+
+        // 2.5 对流中的数据进行排序(根据文本长度，逆序排序）
+        Stream.of(array).sorted(Comparator.comparing(String::length).reversed()).forEach(System.out::println);
+        System.out.println("#####AAAAAA");
+
+        //2.6 peek获取流生成一个新流，并在获取每个元素时，调用action
+        Object[] peekString = Stream.of(array).peek(System.out::println).limit(3).toArray();
+
+        Optional<String> first = list.stream().filter(s -> s.startsWith("周")).findFirst();
+        System.out.println(first.get());
+
+        //2.7. Optional.anyMacth()方法,有任意元素匹配
+        boolean anyMatch = list.stream().anyMatch(s -> s.startsWith("周"));
+        System.out.println("anyMatch:" + anyMatch);
+
+        // 2.8 将流的结果用List接收
+        List<String> streamList = list.stream().collect(Collectors.toList());
+        System.out.println(streamList);
+
+        IntSummaryStatistics summary = Stream.of(array).collect(Collectors.summarizingInt(String::length));
+        double average = summary.getAverage();
+        double max = summary.getMax();
+        System.out.println(average + " , " + max);
+
         //3. some methods
-        //3.1. limit 对流进行截取，只取前N个
-        /*Stream<String> limit = stringStream.limit(2);
-        System.out.println("After limit :" + limit.count());*/
+        /*//3.1. limit 对流进行截取，只取前N个
+        Stream<String> limit = stringStream.limit(2);
+        System.out.println("After limit :" + limit.count());
 
         //3.2 skip 跳过前N个元素
-        /*Stream<String> skip = stringStream.skip(2);
-        System.out.println("After skip :" + skip.count());*/
+        Stream<String> skip = stringStream.skip(2);
+        System.out.println("After skip :" + skip.count());
 
         //3.3. 组合两个流，concat
         Stream<String> streamA = Stream.of("Bob");
         Stream<String> streamB = Stream.of("Saint");
         Stream<String> concat = Stream.concat(streamA, streamB);
-        System.out.println(concat.count());
+        System.out.println(concat.count());*/
 
     }
 }
