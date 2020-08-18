@@ -1,0 +1,11 @@
+Java HotSpot(TM) 64-Bit Server VM (25.231-b11) for windows-amd64 JRE (1.8.0_231-b11), built on Oct  5 2019 03:11:30 by "java_re" with MS VC++ 10.0 (VS2010)
+Memory: 4k page, physical 16581812k(8787948k free), swap 17630388k(7096784k free)
+CommandLine flags: -XX:InitialHeapSize=265308992 -XX:MaxHeapSize=4244943872 -XX:+PrintGC -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:-UseLargePagesIndividualAllocation -XX:+UseParallelGC 
+2020-02-19T22:07:33.029+0800: 0.774: [GC (Allocation Failure) [PSYoungGen: 64903K->9872K(75776K)] 64903K->62881K(249344K), 0.0121398 secs] [Times: user=0.06 sys=0.09, real=0.01 secs] 
+2020-02-19T22:07:33.700+0800: 1.442: [GC (Allocation Failure) [PSYoungGen: 74748K->10208K(140800K)] 127757K->125225K(314368K), 0.0115454 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
+2020-02-19T22:07:33.710+0800: 1.454: [Full GC (Ergonomics) [PSYoungGen: 10208K->0K(140800K)] [ParOldGen: 115017K->124964K(287744K)] 125225K->124964K(428544K), [Metaspace: 3734K->3734K(1056768K)], 0.0192915 secs] [Times: user=0.08 sys=0.00, real=0.02 secs] 
+2020-02-19T22:07:35.059+0800: 2.801: [GC (Allocation Failure) [PSYoungGen: 129116K->10320K(140800K)] 254081K->251286K(428544K), 0.0135160 secs] [Times: user=0.09 sys=0.06, real=0.01 secs] 
+2020-02-19T22:07:35.072+0800: 2.815: [Full GC (Ergonomics) [PSYoungGen: 10320K->0K(140800K)] [ParOldGen: 240966K->250968K(521728K)] 251286K->250968K(662528K), [Metaspace: 3734K->3734K(1056768K)], 0.0183897 secs] [Times: user=0.16 sys=0.00, real=0.02 secs] 
+2020-02-19T22:07:36.446+0800: 4.188: [GC (Allocation Failure) [PSYoungGen: 129502K->10320K(202240K)] 380471K->380290K(723968K), 0.0179973 secs] [Times: user=0.08 sys=0.08, real=0.02 secs] 
+2020-02-19T22:07:38.466+0800: 6.209: [GC (Allocation Failure) [PSYoungGen: 201020K->10320K(202240K)] 570991K->570293K(762880K), 0.0224831 secs] [Times: user=0.06 sys=0.09, real=0.02 secs] 
+2020-02-19T22:07:38.488+0800: 6.231: [Full GC (Ergonomics) [PSYoungGen: 10320K->10008K(202240K)] [ParOldGen: 559973K->559972K(959488K)] 570293K->569980K(1161728K), [Metaspace: 3734K->3734K(1056768K)], 0.0374943 secs] [Times: user=0.31 sys=0.00, real=0.04 secs] 
