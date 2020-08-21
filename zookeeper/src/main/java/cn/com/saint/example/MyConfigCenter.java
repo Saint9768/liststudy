@@ -1,4 +1,4 @@
-package cn.com.saint.example.configcenter;
+package cn.com.saint.example;
 
 import cn.com.saint.watcher.ZkConnectionWatcher;
 import org.apache.zookeeper.WatchedEvent;
