@@ -22,7 +22,8 @@ public class ZookeeperConnection {
             // arg1：服务器的IP和端口
             // arg2: 客户端与服务器之间的会话超时时间，以毫秒为单位
             // arg3：监视器对象
-            ZooKeeper zooKeeper = new ZooKeeper("120.26.187.17", 5000, watchedEvent -> {
+            ZooKeeper zooKeeper = new ZooKeeper("192.168.240.111:2181,192.168.240.111:2182,192.168.240.111:2183",
+                    5000, watchedEvent -> {
                 if (watchedEvent.getState() == Watcher.Event.KeeperState.SyncConnected) {
                     System.out.println("连接创建成功");
                     countDownLatch.countDown();
