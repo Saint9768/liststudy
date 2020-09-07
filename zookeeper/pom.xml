@@ -21,6 +21,12 @@
     <dependencies>
 
 
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+
         <!--curator客户端-->
         <dependency>
             <groupId>org.apache.curator</groupId>
