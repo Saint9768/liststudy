@@ -20,6 +20,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+
         <!-- 德鲁伊数据库连接池 -->
         <dependency>
             <groupId>com.alibaba</groupId>
