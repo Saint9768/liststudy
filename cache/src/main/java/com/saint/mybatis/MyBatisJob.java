@@ -1,4 +1,4 @@
-package com.saint.test;
+package com.saint.mybatis;
 
 import org.apache.ibatis.annotations.Select;
 
