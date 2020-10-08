@@ -1,6 +1,8 @@
 package cn.com.saint.facade;
 
 /**
+ * 外观模式
+ *
  * @author Saint
  * @version 1.0
  * @createTime 2020-10-07 17:52

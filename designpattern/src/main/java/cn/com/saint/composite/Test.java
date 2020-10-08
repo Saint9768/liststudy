@@ -1,6 +1,8 @@
 package cn.com.saint.composite;
 
 /**
+ * 组合模式
+ *
  * @author Saint
  * @version 1.0
  * @createTime 2020-10-08 13:56
