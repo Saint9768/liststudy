@@ -1,0 +1,8 @@
+spring:
+  mail:
+    host: smtp.sina.com
+    username: zhouxin9768@sina.com
+    password: 70bc8f2d00b62fb4
+    default-encoding: UTF-8
+server:
+  port: 8088

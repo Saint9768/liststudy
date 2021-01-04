@@ -1,4 +1,4 @@
-package com.saint.spring;
+package com.saint.spring.test;
 
 import com.saint.spring.annotation.AutoWired2;
 import com.saint.spring.controller.UserController;
