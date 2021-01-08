@@ -86,7 +86,7 @@ public class CurrentDate {
         //15）计算两个日期之间的天数和月数
         LocalDate java8time = LocalDate.of(2019, Month.AUGUST, 31);
         Period period = Period.between(java8time, today);
-        System.out.printf("从2019年8月31到现在过去了 %d 个月。%n", period.getMonths());
+        System.out.printf("从2019年8月31到现在过去了 %d 个月。\n", period.getMonths());
 
         //16）包含时差信息的日期和时间
         LocalDateTime dateTime = LocalDateTime.of(2020, Month.JANUARY, 10, 11, 11);
