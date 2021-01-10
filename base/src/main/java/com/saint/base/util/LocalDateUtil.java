@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 /**
@@ -179,6 +180,36 @@ public class LocalDateUtil {
         }
         LocalDateTime localDateTime = LocalDateTime.of(localDate, localTime);
         return localDateTimeToDate(localDateTime);
+    }
+
+    public static LocalDateTime addMonth(LocalDateTime time, int interval) {
+        return time.plus(interval, ChronoUnit.MONTHS);
+    }
+
+    public static LocalDateTime addDay(LocalDateTime time, int interval) {
+        return time.plus(interval, ChronoUnit.DAYS);
+    }
+
+    public static LocalDateTime addHour(LocalDateTime time, int interval) {
+        return time.plus(interval, ChronoUnit.HOURS);
+    }
+
+    public static LocalDateTime addMinute(LocalDateTime time, int interval) {
+        return time.plus(interval, ChronoUnit.MINUTES);
+    }
+
+    public static LocalDateTime addSecond(LocalDateTime time, int interval) {
+        return time.plus(interval, ChronoUnit.SECONDS);
+    }
+
+    /**
+     * 获取两个时间的时间间隔，time2-time1
+     *
+     * @param time1
+     * @param time2
+     */
+    public static long getIntervalMillisecond(LocalDateTime time1, LocalDateTime time2) {
+        return Duration.between(time1, time2).toMillis();
     }
 
 }
