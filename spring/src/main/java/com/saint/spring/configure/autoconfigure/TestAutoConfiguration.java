@@ -1,6 +1,7 @@
 package com.saint.spring.configure.autoconfigure;
 
 import com.saint.spring.configure.TestConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
@@ -12,4 +13,11 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @Import(TestConfiguration.class)
 public class TestAutoConfiguration {
+
+    @Bean
+    public String autoConfiguration() {
+        System.out.println("自动注入test类");
+        return "autoConfiguration";
+    }
+
 }

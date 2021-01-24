@@ -1,5 +1,6 @@
 package com.saint.spring;
 
+import com.saint.spring.enable.EnableHello;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.context.WebServerInitializedEvent;
