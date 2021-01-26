@@ -1,2 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.saint.spring.configure.autoconfigure.TestAutoConfiguration
+org.springframework.boot.autoconfigure.AutoConfigurationImportListener=\
+com.saint.spring.autoconfigureImportlistener.CustomAutoConfigurationImportListener
