@@ -1,4 +1,4 @@
-package com.saint.base.lock;
+package com.saint.base.aqslocks;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -11,9 +11,9 @@ import java.util.concurrent.locks.ReentrantLock;
  * @createTime 2020-07-26 8:49
  */
 public class Lock_Condition {
-    private Lock lock = new ReentrantLock();
-    private Condition condition1 = lock.newCondition();
-    private Condition condition2 = lock.newCondition();
+    private final Lock lock = new ReentrantLock();
+    private final Condition condition1 = lock.newCondition();
+    private final Condition condition2 = lock.newCondition();
 
     public void start1() {
         try {
