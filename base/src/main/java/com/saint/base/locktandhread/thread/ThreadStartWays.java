@@ -1,4 +1,4 @@
-package com.saint.base.aqslocks.thread;
+package com.saint.base.locktandhread.thread;
 
 import java.util.concurrent.*;
 

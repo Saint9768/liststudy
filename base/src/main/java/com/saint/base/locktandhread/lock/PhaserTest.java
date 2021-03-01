@@ -1,4 +1,4 @@
-package com.saint.base.aqslocks.lock;
+package com.saint.base.locktandhread.lock;
 
 import java.util.Random;
 import java.util.concurrent.Phaser;

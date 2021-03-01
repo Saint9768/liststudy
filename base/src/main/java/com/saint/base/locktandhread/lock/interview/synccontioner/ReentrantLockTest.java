@@ -1,4 +1,4 @@
-package com.saint.base.aqslocks.lock.interview.synccontioner;
+package com.saint.base.locktandhread.lock.interview.synccontioner;
 
 import java.util.LinkedList;
 import java.util.concurrent.locks.Condition;

@@ -1,4 +1,4 @@
-package com.saint.base.aqslocks.lock;
+package com.saint.base.locktandhread.lock;
 
 import java.util.concurrent.Exchanger;
 

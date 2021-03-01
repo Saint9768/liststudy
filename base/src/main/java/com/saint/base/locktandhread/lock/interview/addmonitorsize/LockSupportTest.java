@@ -1,4 +1,4 @@
-package com.saint.base.aqslocks.lock.interview.addmonitorsize;
+package com.saint.base.locktandhread.lock.interview.addmonitorsize;
 
 import java.util.ArrayList;
 import java.util.List;

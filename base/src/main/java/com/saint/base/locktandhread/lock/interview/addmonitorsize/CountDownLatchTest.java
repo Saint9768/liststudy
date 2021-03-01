@@ -1,9 +1,8 @@
-package com.saint.base.aqslocks.lock.interview.addmonitorsize;
+package com.saint.base.locktandhread.lock.interview.addmonitorsize;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
 
 /**
  * 线程1往容器中添加10个元素
@@ -27,7 +26,8 @@ public class CountDownLatchTest {
     public static void main(String[] args) {
         CountDownLatchTest c = new CountDownLatchTest();
         // 一个门栓
-        CountDownLatch countDownLatch = new CountDownLatch(1);
+        CountDownLatch monitorLatch = new CountDownLatch(1);
+        CountDownLatch producerLatch = new CountDownLatch(1);
 
         new Thread(() -> {
             System.out.println("添加线程开始!");
@@ -35,17 +35,12 @@ public class CountDownLatchTest {
                 c.add(new Object());
                 System.out.println("添加了" + i);
                 if (c.getSize() == 5) {
-                    countDownLatch.countDown();
+                    monitorLatch.countDown();
                     try {
-                        countDownLatch.await();
+                        producerLatch.await();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                }
-                try {
-                    TimeUnit.SECONDS.sleep(1);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
             }
             System.out.println("添加线程结束！");
@@ -55,13 +50,13 @@ public class CountDownLatchTest {
             System.out.println("监控开始!");
             while (c.getSize() != 5) {
                 try {
-                    countDownLatch.await();
+                    monitorLatch.await();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
             System.out.println("监控结束!");
-            countDownLatch.countDown();
+            producerLatch.countDown();
 
         }, "t1").start();
     }

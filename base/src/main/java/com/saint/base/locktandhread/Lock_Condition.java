@@ -1,4 +1,4 @@
-package com.saint.base.aqslocks;
+package com.saint.base.locktandhread;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
