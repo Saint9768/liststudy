@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author Saint
@@ -31,5 +32,7 @@ public class MyTest {
         //执行set方法
         method.invoke(userController, userService);
         System.out.println(userController.getUserService());
+        AtomicInteger integer = new AtomicInteger(0);
+        integer.getAndAdd(1);
     }
 }
