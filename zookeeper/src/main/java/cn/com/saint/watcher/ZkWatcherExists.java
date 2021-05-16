@@ -16,7 +16,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class ZkWatcherExists {
 
-    String ip = "120.26.187.17";
+    String ip = "192.168.3.222:2181";
     ZooKeeper zooKeeper = null;
 
     @Test
@@ -91,6 +91,7 @@ public class ZkWatcherExists {
     @Before
     public void before() throws Exception {
         CountDownLatch countDownLatch = new CountDownLatch(1);
+        // 第一种watcher， new zookeeper时，会触发一个session级别的callback
         //连接Zookeeper客户端
         zooKeeper = new ZooKeeper(ip, 6000, new Watcher() {
             @Override

@@ -1,8 +1,10 @@
 package cn.com.saint.watcher;
 
+import org.apache.zookeeper.AsyncCallback;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.data.Stat;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +18,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class ZkWatcherGetData {
 
-    String ip = "120.26.187.17";
+    String ip = "192.168.3.222:2181";
     ZooKeeper zooKeeper = null;
 
     @Test
@@ -24,7 +26,7 @@ public class ZkWatcherGetData {
         //使用连接对象的监视器
         zooKeeper.getData("/node1", true, null);
         // 在此期间，/watcher1节点的新增、创建、删除都将被监控
-        Thread.sleep(50000);
+        Thread.sleep(30000);
         System.out.println("结束");
     }
 
@@ -39,7 +41,7 @@ public class ZkWatcherGetData {
                 System.out.println("eventType=" + event.getType());
             }
         }, null);
-        Thread.sleep(50000);
+        Thread.sleep(30000);
         System.out.println("结束");
     }
 
@@ -86,6 +88,21 @@ public class ZkWatcherGetData {
         }, null);
         Thread.sleep(50000);
         System.out.println("结束");
+    }
+
+    @Test
+    public void asyncGetData() throws Exception {
+        System.out.println("   ---   async start ----");
+        zooKeeper.getData("/node1", false, new AsyncCallback.DataCallback() {
+            @Override
+            public void processResult(int rc, String path, Object ctx, byte[] data, Stat stat) {
+                System.out.println("   ---   async call back ----");
+                System.out.println("数据为： " + new String(data));
+                System.out.println("传递的上下文为： " + ctx.toString());
+            }
+        }, "haha");
+
+        System.out.println("   ---   async over ----");
     }
 
     @Before
