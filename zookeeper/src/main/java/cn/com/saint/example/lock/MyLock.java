@@ -15,7 +15,7 @@ import java.util.concurrent.CountDownLatch;
  * @createTime 2020-08-21 9:32
  */
 public class MyLock {
-    String ip = "120.26.187.17:2181";
+    String ip = "192.168.3.222:2181";
     CountDownLatch countDownLatch = new CountDownLatch(1);
 
     /**
