@@ -17,6 +17,13 @@ public class MyRejectHandler {
                 new ArrayBlockingQueue<>(10),
                 Executors.defaultThreadFactory(),
                 new MyHandler());
+        pool.shutdown();
+        try {
+            //等待队列中的任务执行完毕，但是只等指定时间
+            pool.awaitTermination(1, TimeUnit.MINUTES);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
